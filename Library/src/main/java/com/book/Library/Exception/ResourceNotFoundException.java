@@ -1,5 +1,6 @@
 package com.book.Library.Exception;
 
+//Custom Exception
 public class ResourceNotFoundException extends RuntimeException {
 
 	private static final long serialVersionUID = -9079454849611061074L;
