@@ -56,7 +56,7 @@ public class JwtTokenFilter extends OncePerRequestFilter{
 
             return true;
         }
-      
+      //Getting access Token
       private String getAccessToken(HttpServletRequest request) {
             String header = request.getHeader("Authorization");
             String token = header.split(" ")[1].trim();
@@ -74,6 +74,8 @@ public class JwtTokenFilter extends OncePerRequestFilter{
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
+      
+      //Getting the details of the user
       private UserDetails getUserDetails(String token) {
     	  User userDetails = new User();
           Claims claims = jwtUtil.parseClaims(token);
